@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<div class="dashboard-page py-5 px-3">
+  <div class="text-center mb-5">
+    <h2 class="fw-bold">Welcome to Your Dashboard</h2>
+    <p class="lead text-muted">Access your assistant, manage your account, and explore new features!</p>
+  </div>
+
+  <div class="row g-4">
+    <!-- Card 1: Start Speaking -->
+    <div class="col-md-4">
+      <div class="card shadow-lg h-100 hover-shadow border-0">
+        <img src="https://cdn-icons-png.flaticon.com/512/4712/4712100.png" alt="Speak Icon" width="80">
+        <div class="card-body">
+          <h5 class="card-title">Start Speaking</h5>
+          <p class="card-text">Launch your assistant and start giving your commands.</p>
+          <a href="{% url 'speak' %}" class="btn btn-secondary w-100">Go to Speak</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 2: My Profile -->
+    <div class="col-md-4">
+      <div class="card shadow-lg h-100 hover-shadow border-0">
+        <img src="https://cdn-icons-png.flaticon.com/512/1077/1077114.png" alt="Profile Icon" width="80">
+        <div class="card-body">
+          <h5 class="card-title">My Profile</h5>
+          <p class="card-text">View and manage your account details, preferences, and login info.</p>
+          <a href="{% url 'profile' %}" class="btn btn-secondary w-100">View Profile</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 3: Tips or Features -->
+    <div class="col-md-4">
+      <div class="card shadow-lg h-100 hover-shadow border-0">
+        <img src="https://cdn-icons-png.flaticon.com/512/992/992651.png" alt="Features Icon" width="80">
+        <div class="card-body">
+          <h5 class="card-title">Explore Features</h5>
+          <p class="card-text">Learn what HealBot can do for you—offline tasks, fun features, and more!</p>
+          <a href="{% url 'features' %}" class="btn btn-secondary w-100 text-white">See Features</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock %}

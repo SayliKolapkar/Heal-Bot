@@ -1,0 +1,94 @@
+/* General Body Styling */
+.html-body {
+  padding-top:50px;
+  background-color:rgb(183, 189, 215); /* soft lavender-blue */
+  margin-bottom: 100px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #2e2e2e;
+}
+
+/* Navbar */
+.navbar {
+  padding-top: 0.7rem;
+  padding-bottom: 0.7rem;
+  background-color: rgb(65, 76, 109); 
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  min-height:20px;
+}
+
+.navbar-brand {
+  font-size: 1.1rem;
+  padding-top: 0;
+  padding-bottom: 0;
+  margin-right: 10px;
+}
+
+.navbar-brand strong {
+  font-size: 1.6rem;
+  color:rgb(226, 229, 241) !important;
+}
+
+.nav-link {
+  color:rgb(242, 229, 229) !important;
+  transition: color 0.3s ease-in-out;
+}
+
+.nav-link:hover {
+  color:rgb(110, 134, 221) !important;
+}
+
+/* Footer */
+footer {
+  padding-top: 0.8rem;
+  padding-bottom: 0.8rem;
+  font-size: 0.95rem;
+  background-color:rgb(65, 76, 109);
+  color: #f1f1f1;
+}
+
+/* Login Page Background */
+.login-page {
+  min-height: 90vh;
+  background-image: url("/images/loginbg.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: 20px;
+}
+
+/* Card Component Styling */
+.card {
+  border: none;
+  margin-top:0;
+  border-radius: 15px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease-in-out;
+}
+
+.card:hover {
+  transform: scale(1.03);
+  box-shadow: 0 10px 30px rgba(192, 140, 140, 0.2);
+}
+
+/* Buttons */
+.btn-custom {
+  background-color: #5c6bc0;
+  color: #fff;
+  border: none;
+  transition: background-color 0.3s ease;
+}
+
+.btn-custom:hover {
+  background-color: #3f51b5;
+}
+
+/* Forms */
+.form-control {
+  border-radius: 8px;
+  border: 1px solid #ccc;
+}
+
+/* Section Spacing */
+.section {
+  padding: 60px 0;
+}

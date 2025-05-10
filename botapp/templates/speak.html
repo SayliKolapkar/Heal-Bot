@@ -1,0 +1,62 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<!-- Main container for the page -->
+<div class="container-fluid">
+  <div class="row justify-content-center align-items-center" style="min-height: 100vh;">
+    <div class="col-lg-6 col-md-8 col-12 bg-light p-5 shadow-lg rounded">
+      <h2 class="title text-center mb-4 text-dark">🎙️ Talk to Chintu</h2>
+
+      <!-- Speak form with input box -->
+      <form id="speak-form" method="POST">
+        {% csrf_token %}
+        <div class="form-group mb-3">
+          <input type="text" name="user_input" id="user_input" class="form-control" placeholder="Type something..." required>
+        </div>
+        <div class="d-flex justify-content-between">
+          <button type="submit" class="btn btn-primary">Send</button>
+          <button type="button" class="btn btn-success" onclick="startListening()">🎤Speak</button>
+        </div>
+      </form>
+
+      {% if response %}
+        <div class="response mt-4">
+          <h4 class="text-dark">🤖 Chintu says:</h4>
+          <p>{{ response }}</p>
+          {% if audio_url %}
+            <audio controls autoplay>
+              <source src="{{ audio_url }}" type="audio/mpeg">
+              Your browser does not support the audio element.
+            </audio>
+          {% endif %}
+        </div>
+      {% endif %}
+    </div>
+  </div>
+</div>
+
+
+
+
+<script>
+  function startListening() {
+    const recognition = new (window.SpeechRecognition || window.webkitSpeechRecognition)();
+    recognition.lang = 'en-IN';
+    recognition.interimResults = false;
+    recognition.maxAlternatives = 1;
+
+    recognition.start();
+
+    recognition.onresult = function(event) {
+      const speechResult = event.results[0][0].transcript;
+      document.getElementById("user_input").value = speechResult;
+      document.getElementById("speak-form").submit();
+    };
+
+    recognition.onerror = function(event) {
+      alert("Speech recognition error: " + event.error);
+    };
+  }
+</script>
+
+{% endblock %}

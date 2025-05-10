@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<div class="row align-items-center">
+    <div class="col-md-6 text-center text-md-start">
+        <h1 class="display-4">Meet HealBot</h1>
+        <p class="lead">Your smart AI assistant that listens, responds, and helps you 24/7. Ask anything, anytime!</p>
+        <a href="{% url 'speak' %}" class="btn btn-secondary btn-lg mt-3">Start Talking</a>
+    </div>
+    <div class="col-md-6 text-center">
+        <img src="{% static 'images/homeimg.jpeg' %}" alt="HealBot Logo"  width="450" height="250">
+    </div>
+</div>
+
+<br>
+<div class="row text-center">
+    <h2 class="mb-4">What HealBot Can Do</h2>
+    <div class="col-md-4">
+        <img src="https://cdn-icons-png.flaticon.com/512/3038/3038074.png" alt="Talk" class="img-fluid mb-2" style="height: 100px;">
+        <h5>Talk & Listen</h5>
+        <p>Speak naturally and get voice responses instantly.</p>
+    </div>
+    <div class="col-md-4">
+        <img src="https://cdn-icons-png.flaticon.com/512/2659/2659360.png" alt="Search" class="img-fluid mb-2" style="height: 100px;">
+        <h5>Get Information</h5>
+        <p>From weather to Wikipedia — get smart answers fast.</p>
+    </div>
+    <div class="col-md-4">
+        <img src="https://cdn-icons-png.flaticon.com/512/3176/3176297.png" alt="Fun" class="img-fluid mb-2" style="height: 100px;">
+        <h5>Entertainment</h5>
+        <p>Enjoy jokes, quotes, news, and YouTube music with ease.</p>
+    </div>
+</div>
+
+{% endblock %}
